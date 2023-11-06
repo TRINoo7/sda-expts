@@ -1,0 +1,13 @@
+{
+  "SensorNode": "Edge Device",
+  "SensorID": "SID124",
+  "Description": "Trial 001"
+}{
+  "SensorNode": "End Node",
+  "SensorID": "SID101",
+  "Description": "Trial 002"
+}{
+  "SensorNode": "Edge Device",
+  "SensorID": "SID102",
+  "Description": "Trial 003"
+}

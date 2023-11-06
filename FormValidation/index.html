@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function isUpperCase(string) 
+        {
+            return string.toUpperCase() === string;
+        }
+        function validate()
+        {
+            // e.preventDefault()
+            var password = document.getElementById("password").value;
+            var username = document.getElementById("username").value;
+            var a=0;
+            if(username.includes("@") && username.includes(".") && (username.indexOf(".")-username.indexOf("@")>1) && (username.length-username.indexOf(".")>2))
+            {
+                console.log("Valid");
+            }
+            else
+            {
+                console.log("Not valid username");
+                alert("Not valid username")
+            }
+            for(let i=0;i<password.length;i++)
+            {
+                var j = Number(password[i]);
+                if(j>=0 && j<=9)
+                {
+                    a=1;
+                }
+            }
+            if(isUpperCase(password.charAt(0)) && password.length>=8 && a)
+            {
+                // console.log(password);
+                alert("Password");
+                alert("Valid")
+            }
+            else
+            {
+                alert("Not valid password");
+            }    
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label>Username:&nbsp;</label>
+        <input type="text" id="username">
+        <br>
+        <label>Password:&nbsp;</label>
+        <input type="password" id="password">
+        <br>
+        <input type="button" onclick="validate()" value="Submit">
+    </form>
+</body>
+</html>

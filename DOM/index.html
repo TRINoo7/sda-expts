@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <script>
+        let descrip = [];
+        function details()
+        {
+            document.querySelector(".detail").style.opacity = 1;
+        }
+        function addNode()
+        {
+            const desc = document.querySelector("#description");
+            document.querySelector(".detail").style.opacity = 0;
+            descrip.push(desc.value);
+            desc.value="";
+            let html="";
+            descrip.forEach((ele,index)=> html+=`
+            <div id="${index}">
+                <fieldset style="width:400px;">
+                <legend>Node ${index+1}</legend>
+                <p>description: ${ele}</p>
+                <p>Status: <span id="val"></span></p>
+                <button>ON</button>
+                <button>OFF</button>
+                <p><button id=${index} onclick="remove(this.id)">Remove</button></p>
+                </fieldset>
+            </div>`);
+            document.querySelector(".elements").innerHTML= html;
+            console.log(descrip);
+        }
+        function remove(id)
+        {
+        const parent = document.querySelector(".elements");
+        console.log(id);
+        const child = document.getElementById(id);
+        descrip.splice(id,1);
+        parent.removeChild(child);
+        }
+    </script>
+    <link rel="stylesheet" href="style1.css">
+    <script defer src="script1.js"></script>
+</head>
+<body>
+    <div class="main">
+        <button onclick="details()">Add Node</button>
+        <!-- <button>Remove Node</button> -->
+    </div>
+    <div class="detail">
+        <p>Description of Node: </p>
+        <textarea id="description" cols="30" rows="15"></textarea>
+        <p><button onclick="addNode()">Add details</button></p>
+    </div>
+    <div class="elements" style="display: flex;flex-wrap: wrap;"></div>
+</body>
+</html>

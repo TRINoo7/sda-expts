@@ -1,0 +1,26 @@
+.FormBG
+{
+    margin: auto;
+    height: 29vh;
+    width: 40vw;
+    text-align: center;
+    padding: 30px;
+}
+.Head
+{
+    font-family: Georgia;
+    font-size: 30px;
+    text-align: center;
+    height: 5vh;
+    width: 20vw;
+    margin: auto;
+    line-height: 5vh;
+    padding: 20px;
+}
+
+.Button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
